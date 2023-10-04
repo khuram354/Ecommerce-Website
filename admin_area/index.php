@@ -60,7 +60,7 @@
                     <p class="text-light text-center">Admin Name</p>
                 </div>
                 <div class="button text-center">
-                    <button class="my-3 border-0"><a href=""
+                    <button class="my-3 border-0"><a href="insert_products.php"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Insert
                             Products</a></button>
                     <button class="my-3 border-0"><a href=""
