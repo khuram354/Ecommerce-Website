@@ -27,7 +27,9 @@ include('includes/connect.php');
         <!-- first child -->
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Logo</a>
+                <a class="navbar-brand" href="#">
+                    <img src="./images/khuram_logo.svg" alt="our logo" class="pb-3">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -314,9 +316,6 @@ include('includes/connect.php');
             <p class="mb-0">All Rights Reserved &copy; Designed by Khuram Shahzad 2023</p>
         </div>
     </div>
-
-
-
 
     <!-- Bootstrap JS Link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
