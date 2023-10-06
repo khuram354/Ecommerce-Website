@@ -126,9 +126,10 @@ include('functions/common_function.php');
         </div>
 
         <!-- last child -->
-        <div class="bg-info p-3 text-center">
-            <p class="mb-0">All Rights Reserved &copy; Designed by Khuram Shahzad 2023</p>
-        </div>
+        <!-- include footer -->
+        <?php
+        include('./includes/footer.php');
+        ?>
     </div>
 
     <!-- Bootstrap JS Link -->
