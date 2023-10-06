@@ -91,8 +91,10 @@ include('functions/common_function.php');
                     <!-- fetching products -->
                     <?php
                     //calling function
-                    getproducts()
-                        ?>
+                    getproducts();
+                    get_unique_categories();
+                    get_unique_brands();
+                    ?>
                 </div>
             </div>
             <!-- side-navbar -->
