@@ -92,11 +92,9 @@ include('functions/common_function.php');
                     <!-- fetching products -->
                     <?php
                     //calling function
-                    getproducts();
+                    view_details();
                     get_unique_categories();
                     get_unique_brands();
-                    // $ip = getIPAddress();
-                    // echo 'User Real IP Address - ' . $ip;
                     ?>
                 </div>
             </div>
