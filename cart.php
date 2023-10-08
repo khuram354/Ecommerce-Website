@@ -142,20 +142,18 @@ include('functions/common_function.php');
                                             $update_cart = "UPDATE `cart_details` SET quantity = $quantities WHERE ip_address = '$get_ip_add'";
                                             $result_products_quantity = mysqli_query($con, $update_cart);
                                             $total_price = $total_price * $quantities;
-
-
                                         }
-
-
                                         ?>
                                         <td class="align-middle">
                                             <?php echo $price_table ?>/-
                                         </td>
-                                        <td class="align-middle"><input type="checkbox"></td>
+                                        <td class="align-middle"><input type="checkbox" name="removeitem[]"
+                                                value="<?php echo $product_id ?>"></td>
                                         <td class="align-middle">
                                             <!-- <button type="button" class="btn btn-warning">Update</button> -->
                                             <input type="submit" value="Update Cart" class="btn btn-warning" name="update_cart">
-                                            <button type="button" class="btn btn-danger">Remove</button>
+                                            <!-- <button type="button" class="btn btn-danger">Remove</button> -->
+                                            <input type="submit" value="Remove Cart" class="btn btn-danger" name="remove_cart">
                                         </td>
                                     </tr>
                                 <?php }
@@ -172,6 +170,26 @@ include('functions/common_function.php');
                         <a href="#"><button type="button" class="btn btn-success">Checkout</button></a>
                     </div>
                 </form>
+                <!-- function to remove items -->
+                <?php
+                function remove_cart_item()
+                {
+                    global $con;
+                    if (isset($_POST['remove_cart'])) {
+                        foreach ($_POST['removeitem'] as $remove_id) {
+                            echo $remove_id;
+                            $delete_query = "DELETE FROM `cart_details` WHERE product_id=$remove_id";
+                            $run_delete = mysqli_query($con, $delete_query);
+                            if ($run_delete) {
+                                echo "<script>window.open('cart.php', '_self')</script>";
+                            }
+
+                        }
+                    }
+                }
+                echo $remove_item = remove_cart_item();
+
+                ?>
             </div>
         </div>
 
