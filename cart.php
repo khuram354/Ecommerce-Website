@@ -94,67 +94,84 @@ include('functions/common_function.php');
         <!-- 4th child table -->
         <div class="container">
             <div class="row">
-                <table class="table table-bordered text-center">
-                    <thead>
-                        <tr>
-                            <th>Product Title</th>
-                            <th>Product Image</th>
-                            <th>Quantity</th>
-                            <th>Total Price</th>
-                            <th>Remove</th>
-                            <th colspan="2">Operations</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- php code to display dynamic data -->
-                        <?php
-                        global $con;
-                        $get_ip_add = getIPAddress();
-                        $total_price = 0;
-                        $cart_query = "SELECT * FROM `cart_details` WHERE ip_address='$get_ip_add'";
-                        $result = mysqli_query($con, $cart_query);
-                        while ($row = mysqli_fetch_array($result)) {
-                            $product_id = $row['product_id'];
-                            $select_products = "SELECT * FROM `products` WHERE product_id= $product_id";
-                            $result_products = mysqli_query($con, $select_products);
-                            while ($row_product_price = mysqli_fetch_array($result_products)) {
-                                $product_price = array($row_product_price['product_price']);
-                                $price_table = $row_product_price['product_price'];
-                                $product_title = $row_product_price['product_title'];
-                                $product_image1 = $row_product_price['product_image1'];
-                                $product_values = array_sum($product_price);
-                                $total_price += $product_values;
-                                ?>
-                                <tr>
-                                    <td class="align-middle">
-                                        <?php echo $product_title ?>
-                                    </td>
-                                    <td class="align-middle"><img
-                                            src="./admin_area/product_images/<?php echo $product_image1 ?>" alt=""
-                                            class="cart_img"></td>
-                                    <td class="align-middle"><input type="text" name="" id="" class="form-input w-50"></td>
-                                    <td class="align-middle">
-                                        <?php echo $price_table ?>/-
-                                    </td>
-                                    <td class="align-middle"><input type="checkbox"></td>
-                                    <td class="align-middle">
-                                        <button type="button" class="btn btn-warning">Update</button>
-                                        <button type="button" class="btn btn-danger">Remove</button>
-                                    </td>
-                                </tr>
-                            <?php }
-                        } ?>
-                    </tbody>
-                </table>
-                <!-- subtotal -->
-                <div class="d-flex mb-5">
-                    <h4 class="px-3">Subtotal: <strong>
-                            <?php echo $total_price ?>
-                        </strong></h4>
-                    <a href="index.php"><button type="button" class="btn btn-primary mx-3">Continue
-                            Shopping</button></a>
-                    <a href="#"><button type="button" class="btn btn-success">Checkout</button></a>
-                </div>
+                <form action="" method="post">
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th>Product Title</th>
+                                <th>Product Image</th>
+                                <th>Quantity</th>
+                                <th>Total Price</th>
+                                <th>Remove</th>
+                                <th colspan="2">Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- php code to display dynamic data -->
+                            <?php
+                            global $con;
+                            $get_ip_add = getIPAddress();
+                            $total_price = 0;
+                            $cart_query = "SELECT * FROM `cart_details` WHERE ip_address='$get_ip_add'";
+                            $result = mysqli_query($con, $cart_query);
+                            while ($row = mysqli_fetch_array($result)) {
+                                $product_id = $row['product_id'];
+                                $select_products = "SELECT * FROM `products` WHERE product_id= $product_id";
+                                $result_products = mysqli_query($con, $select_products);
+                                while ($row_product_price = mysqli_fetch_array($result_products)) {
+                                    $product_price = array($row_product_price['product_price']);
+                                    $price_table = $row_product_price['product_price'];
+                                    $product_title = $row_product_price['product_title'];
+                                    $product_image1 = $row_product_price['product_image1'];
+                                    $product_values = array_sum($product_price);
+                                    $total_price += $product_values;
+                                    ?>
+                                    <tr>
+                                        <td class="align-middle">
+                                            <?php echo $product_title ?>
+                                        </td>
+                                        <td class="align-middle"><img
+                                                src="./admin_area/product_images/<?php echo $product_image1 ?>" alt=""
+                                                class="cart_img"></td>
+                                        <td class="align-middle"><input type="text" name="qty"
+                                                class="form-input w-50 text-center"></td>
+                                        <?php
+                                        $get_ip_add = getIPAddress();
+                                        if (isset($_POST['update_cart'])) {
+                                            $quantities = $_POST['qty'];
+                                            $update_cart = "UPDATE `cart_details` SET quantity = $quantities WHERE ip_address = '$get_ip_add'";
+                                            $result_products_quantity = mysqli_query($con, $update_cart);
+                                            $total_price = $total_price * $quantities;
+
+
+                                        }
+
+
+                                        ?>
+                                        <td class="align-middle">
+                                            <?php echo $price_table ?>/-
+                                        </td>
+                                        <td class="align-middle"><input type="checkbox"></td>
+                                        <td class="align-middle">
+                                            <!-- <button type="button" class="btn btn-warning">Update</button> -->
+                                            <input type="submit" value="Update Cart" class="btn btn-warning" name="update_cart">
+                                            <button type="button" class="btn btn-danger">Remove</button>
+                                        </td>
+                                    </tr>
+                                <?php }
+                            } ?>
+                        </tbody>
+                    </table>
+                    <!-- subtotal -->
+                    <div class="d-flex mb-5">
+                        <h4 class="p-1">Subtotal: <strong>
+                                <?php echo $total_price ?>
+                            </strong></h4>
+                        <a href="index.php"><button type="button" class="btn btn-primary mx-3">Continue
+                                Shopping</button></a>
+                        <a href="#"><button type="button" class="btn btn-success">Checkout</button></a>
+                    </div>
+                </form>
             </div>
         </div>
 
