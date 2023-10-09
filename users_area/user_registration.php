@@ -60,10 +60,11 @@ include('../functions/common_function.php');
             color: #ffffff;
             border: none;
             border-radius: 5px;
-            padding: 15px 30px;
+            padding: 7px 17px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             font-size: 18px;
+            letter-spacing: 1.2px;
         }
 
         .btn-register:hover {

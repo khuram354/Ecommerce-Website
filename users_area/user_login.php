@@ -22,23 +22,21 @@
         }
 
         .form-outline input[type="text"],
-        .form-outline input[type="password"],
-        {
-        border: none;
-        border-bottom: 2px solid #3498db;
-        border-radius: 5px;
-        outline: none;
-        background-color: transparent;
-        margin-bottom: 20px;
-        padding: 10px;
-        box-sizing: border-box;
-        width: 100%;
+        .form-outline input[type="password"] {
+            border: none;
+            border-bottom: 2px solid #3498db;
+            border-radius: 5px;
+            outline: none;
+            background-color: transparent;
+            margin-bottom: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 100%;
         }
 
         .form-outline input[type="text"]:focus,
-        .form-outline input[type="password"]:focus,
-        {
-        border-bottom-color: #2980b9;
+        .form-outline input[type="password"]:focus {
+            border-bottom-color: #2980b9;
         }
 
         .form-label {
@@ -53,10 +51,11 @@
             color: #ffffff;
             border: none;
             border-radius: 5px;
-            padding: 15px 30px;
+            padding: 7px 17px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            font-size: 18px;
+            font-size: 14px;
+            letter-spacing: 1.2px;
         }
 
         .btn-login:hover {
