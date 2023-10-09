@@ -1,6 +1,6 @@
 <!-- connect file -->
 <?php
-include('includes/connect.php');
+include('../includes/connect.php');
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ include('includes/connect.php');
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="./images/khuram_logo.svg" alt="our logo" class="pb-3">
+                    <img src="../images/khuram_logo.svg" alt="our logo" class="pb-3">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -58,7 +58,6 @@ include('includes/connect.php');
                 </div>
             </div>
         </nav>
-
         <!-- 2nd child -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
             <ul class="navbar-nav me-auto">
@@ -77,7 +76,6 @@ include('includes/connect.php');
                 Communication is the heart of community and e-commerce
             </p>
         </div>
-
         <!-- 4th child -->
         <div class="row px-1">
             <div class="col-md-12">
@@ -85,7 +83,7 @@ include('includes/connect.php');
                 <div class="row">
                     <?php
                     if (!isset($SESSION['username'])) {
-                        include('users_area/user_login.php');
+                        include('user_login.php');
                     } else {
                         include('payment.php');
                     }
@@ -93,17 +91,10 @@ include('includes/connect.php');
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
         <!-- last child -->
         <!-- include footer -->
         <?php
-        include('./includes/footer.php');
+        include('../includes/footer.php');
         ?>
     </div>
 
