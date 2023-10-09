@@ -22,28 +22,30 @@
         }
 
         .form-outline input[type="text"],
-        .form-outline input[type="email"],
         .form-outline input[type="password"],
-        .form-outline input[type="file"] {
-            border: none;
-            border-bottom: 2px solid #3498db;
-            border-radius: 0;
-            outline: none;
-            background-color: transparent;
-            margin-bottom: 20px;
-            padding: 10px 0;
-            width: 100%;
+        {
+        border: none;
+        border-bottom: 2px solid #3498db;
+        border-radius: 5px;
+        outline: none;
+        background-color: transparent;
+        margin-bottom: 20px;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 100%;
         }
 
         .form-outline input[type="text"]:focus,
-        .form-outline input[type="email"]:focus,
         .form-outline input[type="password"]:focus,
-        .form-outline input[type="file"]:focus {
-            border-bottom-color: #2980b9;
+        {
+        border-bottom-color: #2980b9;
         }
 
         .form-label {
-            color: #555555;
+            color: #3498db;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
 
         .btn-login {
@@ -54,10 +56,12 @@
             padding: 15px 30px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            font-size: 18px;
         }
 
         .btn-login:hover {
             background-color: #219f4e;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
         }
 
         .login-link {
