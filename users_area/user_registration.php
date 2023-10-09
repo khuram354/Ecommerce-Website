@@ -164,6 +164,9 @@ if (isset($_POST['user_register'])) {
     $user_image_tmp = $_FILES['user_image']['tmp_name'];
     $user_ip = getIPAddress();
 
+    // Hash the password before storing it
+    $hashed_password = password_hash($user_password, PASSWORD_DEFAULT);
+
     //select query
     $select_query = "SELECT * FROM `user_table` WHERE username='$user_username'";
     $result = mysqli_query($con, $select_query);
@@ -175,7 +178,7 @@ if (isset($_POST['user_register'])) {
     } else {
         //insert query
         move_uploaded_file($user_image_tmp, "./user_images/$user_image");
-        $insert_query = "INSERT INTO `user_table` (username,user_email,user_password,user_image,user_ip,user_address,user_mobile) VALUES ('$user_username','$user_email','$user_password','$user_image','$user_ip','$user_address','$user_contact')";
+        $insert_query = "INSERT INTO `user_table` (username,user_email,user_password,user_image,user_ip,user_address,user_mobile) VALUES ('$user_username','$user_email','$hashed_password','$user_image','$user_ip','$user_address','$user_contact')";
         $sql_execute = mysqli_query($con, $insert_query);
     }
     if ($sql_execute) {
