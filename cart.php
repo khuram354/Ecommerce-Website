@@ -55,7 +55,7 @@ include('functions/common_function.php');
                             <a class="nav-link" href="display_all.php">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Register</a>
+                            <a class="nav-link" href="./users_area/user_registration.php">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
@@ -80,7 +80,7 @@ include('functions/common_function.php');
                     <a class="nav-link" href="#">Welcome Guest</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="./users_area/user_login.php">Login</a>
                 </li>
             </ul>
         </nav>

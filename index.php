@@ -47,7 +47,7 @@ include('functions/common_function.php');
                             <a class="nav-link" href="display_all.php">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Register</a>
+                            <a class="nav-link" href="./users_area/user_registration.php">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
@@ -94,8 +94,9 @@ include('functions/common_function.php');
             </p>
         </div>
 
+
+        <!-- 4th child -->
         <div class="container-fluid">
-            <!-- 4th child -->
             <div class="row">
                 <div class="col-md-10">
                     <!-- Products -->
@@ -138,6 +139,7 @@ include('functions/common_function.php');
                 </div>
             </div>
         </div>
+
         <!-- last child -->
         <!-- include footer -->
         <?php
