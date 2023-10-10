@@ -1,6 +1,7 @@
 <!-- connect file -->
 <?php
 include('../includes/connect.php');
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -64,9 +65,17 @@ include('../includes/connect.php');
                 <li class="nav-item">
                     <a class="nav-link" href="#">Welcome Guest</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
+                <?php
+                if (!isset($_SESSION['username'])) {
+                    echo "<li class='nav-item'>
+                    <a class='nav-link' href='./user_login.php'>Login</a>
+                </li>";
+                } else {
+                    echo "<li class='nav-item'>
+                    <a class='nav-link' href='logout.php'>Logout</a>
+                </li>";
+                }
+                ?>
             </ul>
         </nav>
         <!-- 3rd child -->
@@ -77,17 +86,19 @@ include('../includes/connect.php');
             </p>
         </div>
         <!-- 4th child -->
-        <div class="row px-1">
-            <div class="col-md-12">
-                <!-- products -->
-                <div class="row">
-                    <?php
-                    if (!isset($SESSION['username'])) {
-                        include('user_login.php');
-                    } else {
-                        include('payment.php');
-                    }
-                    ?>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- products -->
+                    <div class="row">
+                        <?php
+                        if (!isset($_SESSION['username'])) {
+                            include('user_login.php');
+                        } else {
+                            include('payment.php');
+                        }
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>

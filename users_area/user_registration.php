@@ -193,7 +193,7 @@ if (isset($_POST['user_register'])) {
     $result_cart = mysqli_query($con, $select_cart_items);
     $rows_count = mysqli_num_rows($result_cart);
     if ($rows_count > 0) {
-        $SESSION['username'] = $user_username;
+        $_SESSION['username'] = $user_username;
         echo "<script>alert('You have some items in the Cart!')</script>";
         echo "<script>window.open('checkout.php','_self')</script>";
     } else {
