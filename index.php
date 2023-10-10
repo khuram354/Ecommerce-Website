@@ -21,6 +21,7 @@ include('functions/common_function.php');
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom CSS File Link -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -92,49 +93,51 @@ include('functions/common_function.php');
                 Communication is the heart of community and e-commerce
             </p>
         </div>
-        <!-- 4th child -->
-        <div class="row px-1">
-            <div class="col-md-10">
-                <!-- Products -->
-                <div class="row">
-                    <!-- fetching products -->
-                    <?php
-                    //calling function
-                    getproducts();
-                    get_unique_categories();
-                    get_unique_brands();
-                    // $ip = getIPAddress();
-                    // echo 'User Real IP Address - ' . $ip;
-                    ?>
+
+        <div class="container-fluid">
+            <!-- 4th child -->
+            <div class="row">
+                <div class="col-md-10">
+                    <!-- Products -->
+                    <div class="row">
+                        <!-- fetching products -->
+                        <?php
+                        //calling function
+                        getproducts();
+                        get_unique_categories();
+                        get_unique_brands();
+                        // $ip = getIPAddress();
+                        // echo 'User Real IP Address - ' . $ip;
+                        ?>
+                    </div>
+                </div>
+                <!-- side-navbar -->
+                <div class="col-md-2 bg-secondary p-0">
+                    <!-- Brands to be displayed -->
+                    <ul class="navbar-nav me-auto text-center">
+                        <li class="nav-item bg-info">
+                            <a href="#" class="nav-link text-light">
+                                <h4>Delivery Brands</h4>
+                            </a>
+                        </li>
+                        <?php
+                        getbrands()
+                            ?>
+                    </ul>
+                    <!-- categories to be displayed -->
+                    <ul class="navbar-nav me-auto text-center">
+                        <li class="nav-item bg-info">
+                            <a href="#" class="nav-link text-light">
+                                <h4>Categories</h4>
+                            </a>
+                        </li>
+                        <?php
+                        getcategories()
+                            ?>
+                    </ul>
                 </div>
             </div>
-            <!-- side-navbar -->
-            <div class="col-md-2 bg-secondary p-0">
-                <!-- Brands to be displayed -->
-                <ul class="navbar-nav me-auto text-center">
-                    <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light">
-                            <h4>Delivery Brands</h4>
-                        </a>
-                    </li>
-                    <?php
-                    getbrands()
-                        ?>
-                </ul>
-                <!-- categories to be displayed -->
-                <ul class="navbar-nav me-auto text-center">
-                    <li class="nav-item bg-info">
-                        <a href="#" class="nav-link text-light">
-                            <h4>Categories</h4>
-                        </a>
-                    </li>
-                    <?php
-                    getcategories()
-                        ?>
-                </ul>
-            </div>
         </div>
-
         <!-- last child -->
         <!-- include footer -->
         <?php

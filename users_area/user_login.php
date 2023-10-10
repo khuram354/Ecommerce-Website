@@ -1,3 +1,7 @@
+<?php
+include('../includes/connect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,7 +89,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-lg-6 col-md-8">
                 <div class="form-container">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="" method="post">
                         <!-- username field -->
                         <div class="form-outline">
                             <label for="user_username" class="form-label">User Name</label>
@@ -98,7 +102,7 @@
                             <input type="password" id="user_password" class="form-control"
                                 placeholder="Enter your password" autocomplete="off" name="user_password" required />
                         </div>
-                        <div class="text-center">
+                        <div class="mt-4">
                             <button type="submit" class="btn btn-login" name="user_login">Login</button>
                         </div>
                         <p class="small text-center mt-3">Don't have an account ? <a href="user_registration.php"
@@ -108,6 +112,28 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['user_login'])) {
+    $user_username = $_POST['user_username'];
+    $user_password = $_POST['user_password'];
+
+    $select_query = "SELECT * FROM `user_table` WHERE username='$user_username'";
+    $result = mysqli_query($con, $select_query);
+    $row_count = mysqli_num_rows($result);
+    $row_data = mysqli_fetch_assoc($result);
+    if ($row_count > 0) {
+        if (password_verify($user_password, $row_data['user_password'])) {
+            echo "<script>alert('Login Successful!')</script>";
+        } else {
+            echo "<script>alert('invalid credentials')</script>";
+        }
+    } else {
+        echo "<script>alert('invalid credentials')</script>";
+    }
+}
+?>
