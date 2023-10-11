@@ -118,23 +118,30 @@ session_start();
                             <h4>Your Profile</h4>
                         </a>
                     </li>
+                    <?php
+                    $username = $_SESSION['username'];
+                    $user_image = "SELECT * FROM `user_table` WHERE username = '$username'";
+                    $result_image = mysqli_query($con, $user_image);
+                    $row_image = mysqli_fetch_array($result_image);
+                    $user_image = $row_image['user_image'];
+                    echo "<li class='nav-item'>
+                    <img src='./user_images/$user_image' alt='' class='profile_img'>
+                    </li>";
+                    ?>
                     <li class="nav-item">
-                        <img src="./user_images/men_suit_300x300.jpg" alt="" class="profile_img">
+                        <a class="nav-link text-light" href="profile.php">Pending Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Pending Orders</a>
+                        <a class="nav-link text-light" href="profile.php?edit_account">Edit Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Edit Account</a>
+                        <a class="nav-link text-light" href="profile.php?my_orders">My Orders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">My Orders</a>
+                        <a class="nav-link text-light" href="profile.php?delete_account">Delete Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Delete Account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Logout</a>
+                        <a class="nav-link text-light" href="logout.php">Logout</a>
                     </li>
                 </ul>
             </div>
