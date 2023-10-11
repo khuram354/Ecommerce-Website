@@ -15,8 +15,6 @@ include('../functions/common_function.php');
     <style>
         img {
             width: 90%;
-            /* margin: auto;
-            display: block; */
         }
     </style>
 </head>
