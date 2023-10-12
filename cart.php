@@ -156,9 +156,17 @@ session_start();
                                         $get_ip_add = getIPAddress();
                                         if (isset($_POST['update_cart'])) {
                                             $quantities = $_POST['qty'];
-                                            $update_cart = "UPDATE `cart_details` SET quantity = $quantities WHERE ip_address = '$get_ip_add'";
-                                            $result_products_quantity = mysqli_query($con, $update_cart);
-                                            $total_price = $total_price * $quantities;
+                                            $update_cart = "UPDATE `cart_details` SET quantity = ? WHERE ip_address = ?";
+                                            $stmt = $con->prepare($update_cart);
+                                            $stmt->bind_param("is", $quantities, $get_ip_add);
+                                            if ($stmt->execute()) {
+                                                // Update successful
+                                                $total_price = intval($total_price) * intval($quantities);
+                                            } else {
+                                                // Update failed
+                                                echo "Error updating cart: " . $stmt->error;
+                                            }
+                                            $stmt->close();
                                         }
                                         ?>
                                         <td class="align-middle">
