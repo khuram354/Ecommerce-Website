@@ -1,3 +1,8 @@
+<?php
+include('../includes/connect.php');
+include('../functions/common_function.php');
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +21,10 @@
     <link rel="stylesheet" href="../style.css">
 
     <style>
+        body {
+            overflow-x: hidden;
+        }
+
         .admin_image {
             width: 100px;
             object-fit: contain;
@@ -46,7 +55,6 @@
                 </nav>
             </div>
         </nav>
-
         <!-- 2nd child -->
         <div class="bg-light text-center">
             <h3 class="p-2">Manage Details</h3>
@@ -63,7 +71,7 @@
                     <button class="my-3 border-0"><a href="insert_products.php"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Insert
                             Products</a></button>
-                    <button class="my-3 border-0"><a href=""
+                    <button class="my-3 border-0"><a href="index.php?view_products"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">View
                             Product</a></button>
                     <button class="my-3 border-0"><a href="index.php?insert_category"
@@ -101,6 +109,9 @@
             }
             if (isset($_GET['insert_brand'])) {
                 include('insert_brands.php');
+            }
+            if (isset($_GET['view_products'])) {
+                include('view_products.php');
             }
             ?>
         </div>
