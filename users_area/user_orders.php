@@ -52,9 +52,14 @@
                 <td>$total_products</td>
                 <td>$invoice_number</td>
                 <td>$order_date</td>
-                <td>$order_status</td>
-                <td><a href='confirm_payment.php?'>Confirm</a></td>
-            </tr>";
+                <td>$order_status</td>";
+
+                if ($order_status == 'Complete') {
+                    echo "<td>Paid</td>";
+                } else {
+                    echo "<td><a href='confirm_payment.php?order_id=$order_id'>Confirm</a></td>";
+                }
+                echo "</tr>";
                 $number++;
             }
             ?>
