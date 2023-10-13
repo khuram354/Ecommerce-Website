@@ -25,6 +25,11 @@ session_start();
             overflow-x: hidden;
         }
 
+        .product_img {
+            width: 10%;
+            object-fit: contain;
+        }
+
         .admin_image {
             width: 100px;
             object-fit: contain;
@@ -117,9 +122,10 @@ session_start();
         </div>
 
         <!-- last child -->
-        <div class="bg-info p-3 text-center footer">
-            <p class="mb-0">All Rights Reserved &copy; Designed by Khuram Shahzad 2023</p>
-        </div>
+        <!-- include footer -->
+        <?php
+        include('../includes/footer.php');
+        ?>
 
     </div>
 
