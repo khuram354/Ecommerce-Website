@@ -25,10 +25,6 @@ session_start();
             overflow-x: hidden;
         }
 
-        .table-thick-border {
-            border: 2px solid #000;
-        }
-
         .product_img {
             width: 100px;
             object-fit: contain;
@@ -82,13 +78,13 @@ session_start();
                     <button class="my-3 border-0"><a href="index.php?insert_category"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Insert
                             Categories</a></button>
-                    <button class="my-3 border-0"><a href=""
+                    <button class="my-3 border-0"><a href="index.php?view_categories"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">View
                             Categories</a></button>
                     <button class="my-3 border-0"><a href="index.php?insert_brand"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Insert
                             Brands</a></button>
-                    <button class="my-3 border-0"><a href=""
+                    <button class="my-3 border-0"><a href="index.php?view_brands"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">View
                             Brands</a></button>
                     <button class="my-3 border-0"><a href=""
@@ -120,6 +116,15 @@ session_start();
             }
             if (isset($_GET['edit_products'])) {
                 include('edit_products.php');
+            }
+            if (isset($_GET['delete_product'])) {
+                include('delete_product.php');
+            }
+            if (isset($_GET['view_categories'])) {
+                include('view_categories.php');
+            }
+            if (isset($_GET['view_brands'])) {
+                include('view_brands.php');
             }
             ?>
         </div>
