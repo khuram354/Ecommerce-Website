@@ -25,20 +25,20 @@ session_start();
             overflow-x: hidden;
         }
 
+        .table-thick-border {
+            border: 2px solid #000;
+        }
+
         .product_img {
-            width: 10%;
+            width: 100px;
             object-fit: contain;
+            height: auto;
+            margin-left: 10px;
         }
 
         .admin_image {
             width: 100px;
             object-fit: contain;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
         }
     </style>
 
@@ -117,6 +117,9 @@ session_start();
             }
             if (isset($_GET['view_products'])) {
                 include('view_products.php');
+            }
+            if (isset($_GET['edit_products'])) {
+                include('edit_products.php');
             }
             ?>
         </div>
