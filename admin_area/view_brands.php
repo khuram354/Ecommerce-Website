@@ -1,11 +1,11 @@
 <h3 class="text-center text-primary">All Brands</h3>
-<table class="table table-bordered mt-3 text-center align-middle w-50 mx-auto">
+<table class="table table-bordered mt-5 text-center align-middle">
     <thead>
         <tr>
-            <th class="bg-dark text-light col-1">Sr</th>
-            <th class="bg-dark text-light col-4">Brand Title</th>
-            <th class="bg-dark text-light col-1">Edit</th>
-            <th class="bg-dark text-light col-1">Delete</th>
+            <th class="bg-dark text-light">Sr</th>
+            <th class="bg-dark text-light">Brand Title</th>
+            <th class="bg-dark text-light">Edit</th>
+            <th class="bg-dark text-light">Delete</th>
         </tr>
     </thead>
     <tbody>
