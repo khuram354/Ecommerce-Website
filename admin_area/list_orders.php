@@ -38,7 +38,8 @@
                 <td>$total_products</td>
                 <td>$order_date</td>
                 <td>$order_status</td>
-                <td><a href=''><i class='fa-solid fa-trash fa-lg' style='color: #e30d38;'></i></a></td>
+                <td><a href='index.php?delete_order=$order_id'><i class='fa-solid fa-trash fa-lg' style='color: #e30d38;'></i></a>
+                </td>
                 </tr>";
             }
         }

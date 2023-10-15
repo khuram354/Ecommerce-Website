@@ -47,9 +47,9 @@
                 <td>
                     <?php echo $status; ?>
                 </td>
-                <td><a href='index.php?edit_products=<?php echo $product_id ?>'><i
+                <td><a href='index.php?edit_products=<?php echo $product_id; ?>'><i
                             class='fa-solid fa-pen-to-square fa-lg'></i></a></td>
-                <td><a href='index.php?delete_product=<?php echo $product_id ?>'><i class='fa-solid fa-trash fa-lg'
+                <td><a href='index.php?delete_product=<?php echo $product_id; ?>'><i class='fa-solid fa-trash fa-lg'
                             style='color: #e30d38;'></i></a></td>
             </tr>
             <?php

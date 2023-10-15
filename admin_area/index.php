@@ -144,6 +144,9 @@ session_start();
             if (isset($_GET['list_orders'])) {
                 include('list_orders.php');
             }
+            if (isset($_GET['delete_order'])) {
+                include('delete_order.php');
+            }
             ?>
         </div>
 
