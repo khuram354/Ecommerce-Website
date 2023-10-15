@@ -1,5 +1,5 @@
 <h3 class="text-center text-primary">All Brands</h3>
-<table class="table table-bordered mt-5 text-center align-middle">
+<table class="table table-bordered mt-4 text-center align-middle">
     <thead>
         <tr>
             <th class="bg-dark text-light">Sr</th>
@@ -25,8 +25,10 @@
                 <td>
                     <?php echo $brand_title; ?>
                 </td>
-                <td><a href=''><i class='fa-solid fa-pen-to-square fa-lg'></i></a></td>
-                <td><a href=''><i class='fa-solid fa-trash fa-lg' style='color: #e30d38;'></i></a></td>
+                <td><a href='index.php?edit_brands=<?php echo $brand_id; ?>'><i
+                            class='fa-solid fa-pen-to-square fa-lg'></i></a></td>
+                <td><a href='index.php?delete_brands=<?php echo $brand_id; ?>'><i class='fa-solid fa-trash fa-lg'
+                            style='color: #e30d38;'></i></a></td>
             </tr>
             <?php
         }

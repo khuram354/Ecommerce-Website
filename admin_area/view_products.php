@@ -1,5 +1,5 @@
 <h3 class="text-center text-success">All Products</h3>
-<table class="table table-bordered text-center mt-5 align-middle">
+<table class="table table-bordered text-center mt-3 align-middle">
     <thead>
         <tr>
             <th class="bg-info">Product ID</th>
