@@ -28,7 +28,7 @@
                 <td><a href='index.php?edit_brands=<?php echo $brand_id; ?>'><i
                             class='fa-solid fa-pen-to-square fa-lg'></i></a></td>
 
-                <td><a href='index.php?delete_product=<?php echo $brand_id; ?>'><i class='fa-solid fa-trash fa-lg'
+                <td><a href='index.php?delete_brands=<?php echo $brand_id; ?>'><i class='fa-solid fa-trash fa-lg'
                             style='color: #e30d38;'></i></a></td>
             </tr>
             <?php
