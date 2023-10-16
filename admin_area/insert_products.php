@@ -55,6 +55,92 @@ if (isset($_POST['insert_product'])) {
     <!-- Custom CSS File Link -->
     <link rel="stylesheet" href="../style.css">
 
+    <style>
+        /* Style for form container */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for form headings */
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Style for form inputs */
+        .form-outline {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        input[type="file"].form-control {
+            padding: 15px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+
+        .form-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        /* Style for dropdowns */
+        .form-select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* Style for submit button */
+        .btn-info {
+            background-color: #fff;
+            color: #FF00FF;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-info:hover {
+            background-color: #31b0d5;
+        }
+
+        /* Additional styles for responsiveness */
+
+
+        /* Style for error message */
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+
 </head>
 
 <body class="bg-light">

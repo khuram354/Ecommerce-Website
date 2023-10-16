@@ -28,8 +28,9 @@
                 <td><a href='index.php?edit_category=<?php echo $category_id; ?>'><i
                             class='fa-solid fa-pen-to-square fa-lg'></i></a></td>
 
-                <td><a href='index.php?delete_category=<?php echo $category_id; ?>'><i class='fa-solid fa-trash fa-lg'
-                            style='color: #e30d38;'></i></a></td>
+                <td><a href='index.php?delete_category=<?php echo $category_id; ?>'
+                        onclick='return confirm("Are you sure you want to delete this category?");'><i
+                            class='fa-solid fa-trash fa-lg' style='color: #e30d38;'></i></a></td>
             </tr>
             <?php
         }
