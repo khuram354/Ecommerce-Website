@@ -1,7 +1,7 @@
 <h3 class="text-center text-primary">All Brands</h3>
-<table class="table table-bordered mt-3 aligin-middle text-center">
+<table class="table table-bordered mt-3 align-middle text-center">
     <thead class="table-dark">
-        <tr class="table-light">
+        <tr>
             <th>Sr</th>
             <th>Brand Title</th>
             <th>Edit</th>

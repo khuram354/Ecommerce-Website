@@ -1,7 +1,7 @@
 <h3 class="text-center text-primary">All Products</h3>
-<table class="table table-bordered mt-3 aligin-middle text-center">
+<table class="table table-bordered mt-3 align-middle text-center">
     <thead class="table-dark">
-        <tr class="table-light">
+        <tr>
             <th>Product ID</th>
             <th>Product Title</th>
             <th>Product Image</th>
