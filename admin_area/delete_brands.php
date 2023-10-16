@@ -7,6 +7,10 @@ if (isset($_GET['delete_brands'])) {
     if ($result) {
         echo "<script>alert('Brand has been deleted Successfully!')</script>";
         echo "<script>window.open('./index.php?view_brands','_self')</script>";
+        exit();
+    } else {
+        echo "Error: Unable to delete the order.";
     }
 }
+
 ?>
