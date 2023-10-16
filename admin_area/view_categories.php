@@ -1,11 +1,11 @@
 <h3 class="text-center text-primary">All Categories</h3>
-<table class="table table-bordered mt-4 text-center align-middle">
-    <thead>
-        <tr>
-            <th class="bg-dark text-light">Sr</th>
-            <th class="bg-dark text-light">Category Title</th>
-            <th class="bg-dark text-light">Edit</th>
-            <th class="bg-dark text-light">Delete</th>
+<table class="table table-bordered mt-3 aligin-middle text-center">
+    <thead class="table-dark">
+        <tr class="table-light">
+            <th>Sr</th>
+            <th>Category Title</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +27,7 @@
                 </td>
                 <td><a href='index.php?edit_category=<?php echo $category_id; ?>'><i
                             class='fa-solid fa-pen-to-square fa-lg'></i></a></td>
+
                 <td><a href='index.php?delete_category=<?php echo $category_id; ?>'><i class='fa-solid fa-trash fa-lg'
                             style='color: #e30d38;'></i></a></td>
             </tr>

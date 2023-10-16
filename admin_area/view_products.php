@@ -1,15 +1,15 @@
-<h3 class="text-center text-success">All Products</h3>
-<table class="table table-bordered text-center mt-3 align-middle">
-    <thead>
-        <tr>
-            <th class="bg-info">Product ID</th>
-            <th class="bg-info">Product Title</th>
-            <th class="bg-info">Product Image</th>
-            <th class="bg-info">Product Price</th>
-            <th class="bg-info">Total Sold</th>
-            <th class="bg-info">Status</th>
-            <th class="bg-info">Edit</th>
-            <th class="bg-info">Delete</th>
+<h3 class="text-center text-primary">All Products</h3>
+<table class="table table-bordered mt-3 aligin-middle text-center">
+    <thead class="table-dark">
+        <tr class="table-light">
+            <th>Product ID</th>
+            <th>Product Title</th>
+            <th>Product Image</th>
+            <th>Product Price</th>
+            <th>Total Sold</th>
+            <th>Status</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -56,5 +56,4 @@
         }
         ?>
     </tbody>
-
 </table>
