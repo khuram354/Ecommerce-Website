@@ -93,7 +93,7 @@ session_start();
                     <button class="my-3 border-0"><a href="index.php?list_orders"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">All
                             Orders</a></button>
-                    <button class="my-3 border-0"><a href=""
+                    <button class="my-3 border-0"><a href="index.php?list_payments"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">All
                             Payments</a></button>
                     <button class="my-3 border-0"><a href=""
@@ -146,6 +146,12 @@ session_start();
             }
             if (isset($_GET['delete_order'])) {
                 include('delete_order.php');
+            }
+            if (isset($_GET['list_payments'])) {
+                include('list_payments.php');
+            }
+            if (isset($_GET['delete_payment'])) {
+                include('delete_payment.php');
             }
             ?>
         </div>

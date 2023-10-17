@@ -6,21 +6,21 @@
         $get_orders = "SELECT * FROM `user_orders`";
         $result = mysqli_query($con, $get_orders);
         $row_count = mysqli_num_rows($result);
-        echo "<tr>
-        <th>Sr</th>
-        <th>Due Amount</th>
-        <th>Invoice Number</th>
-        <th>Total Products</th>
-        <th>Order Date</th>
-        <th>Status</th>
-        <th>Delete</th>
-        </tr>
-        </thead>
-        <tbody>";
 
         if ($row_count == 0) {
-            echo "<h4 class='text-center mt-5 bg-danger'>No Orders yet</h4>";
+            echo "<h4 class='text-center mt-6 text-danger'>No Orders yet</h4>";
         } else {
+            echo "<tr>
+            <th>Sr</th>
+            <th>Due Amount</th>
+            <th>Invoice Number</th>
+            <th>Total Products</th>
+            <th>Order Date</th>
+            <th>Status</th>
+            <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>";
             $number = 0;
             while ($row_data = mysqli_fetch_assoc($result)) {
                 $order_id = $row_data['order_id'];

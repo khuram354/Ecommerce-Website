@@ -17,8 +17,8 @@
 
     ?>
     <h3 class="text-success">All My Orders</h3>
-    <table class="table table-bordered mt-5">
-        <thead>
+    <table class="table table-bordered mt-3 text-center align-middle">
+        <thead class="table-dark">
             <tr>
                 <th>Sr</th>
                 <th>Amount Due</th>
