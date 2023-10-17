@@ -38,7 +38,9 @@
                 <td>$total_products</td>
                 <td>$order_date</td>
                 <td>$order_status </td>
-                <td><a href='index.php?delete_order=$order_id'><i class='fa-solid fa-trash fa-lg' style='color: #e30d38;'></i></a></td>
+                <td>
+                <a href='javascript:void(0);' onclick='confirmDelete($order_id)'><i class='fa-solid fa-trash fa-lg' style='color: #e30d38;'></i></a>
+                </td>
                 </tr>";
             }
         }
@@ -47,3 +49,12 @@
 
         </tbody>
 </table>
+
+<script>
+    function confirmDelete(orderId) {
+        var confirmDelete = confirm("Are you sure you want to delete this order?");
+        if (confirmDelete) {
+            window.location.href = 'index.php?delete_order=' + orderId;
+        }
+    }
+</script>

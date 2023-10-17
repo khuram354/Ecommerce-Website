@@ -35,7 +35,9 @@
                 <td>$invoice_number</td>
                 <td>$payment_mode</td>
                 <td>$date</td>
-                <td><a href='index.php?delete_payment=$payment_id'><i class='fa-solid fa-trash fa-lg' style='color: #e30d38;'></i></a></td>
+                <td>
+                <a href='javascript:void(0);' onclick='confirmDelete($payment_id)'><i class='fa-solid fa-trash fa-lg' style='color: #e30d38;'></i></a>
+                </td>
                 </tr>";
             }
         }
@@ -44,3 +46,12 @@
 
         </tbody>
 </table>
+
+<script>
+    function confirmDelete(paymentId) {
+        var confirmDelete = confirm("Are you sure you want to delete this payment?");
+        if (confirmDelete) {
+            window.location.href = 'index.php?delete_payment=' + paymentId;
+        }
+    }
+</script>
