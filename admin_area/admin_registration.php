@@ -123,7 +123,7 @@
                     <div class="text-center mt-4">
                         <button type="submit" class="btn btn-register" name="admin_registration">Register</button>
                     </div>
-                    <p class="small text-center mt-2">Already have an account? <a href="admin_login.php"
+                    <p class="small text-center mt-2 fw-bold">Already have an account? <a href="admin_login.php"
                             class="login-link">Login</a></p>
                 </form>
             </div>

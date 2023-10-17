@@ -141,7 +141,7 @@ include('../functions/common_function.php');
                         <div class="text-center mt-4">
                             <button type="submit" class="btn btn-register" name="user_register">Register</button>
                         </div>
-                        <p class="small text-center mt-2">Already have an account? <a href="user_login.php"
+                        <p class="small text-center mt-2 fw-bold">Already have an account? <a href="user_login.php"
                                 class="login-link">Login</a></p>
                     </form>
                 </div>
