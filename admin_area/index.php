@@ -38,6 +38,7 @@ session_start();
         .admin_image {
             width: 100px;
             object-fit: contain;
+            height: auto;
         }
     </style>
 
@@ -96,7 +97,7 @@ session_start();
                     <button class="my-3 border-0"><a href="index.php?list_payments"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">All
                             Payments</a></button>
-                    <button class="my-3 border-0"><a href=""
+                    <button class="my-3 border-0"><a href="index.php?list_users"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">List
                             Users</a></button>
                     <button class="my-3 border-0"><a href=""
@@ -152,6 +153,12 @@ session_start();
             }
             if (isset($_GET['delete_payment'])) {
                 include('delete_payment.php');
+            }
+            if (isset($_GET['list_users'])) {
+                include('list_users.php');
+            }
+            if (isset($_GET['delete_user'])) {
+                include('delete_user.php');
             }
             ?>
         </div>
