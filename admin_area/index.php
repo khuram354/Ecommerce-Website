@@ -87,36 +87,69 @@ session_start();
                     ?>
                 </div>
                 <div class="button text-center">
-                    <button class="my-3 border-0"><a href="insert_products.php"
-                            class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Insert
-                            Products</a></button>
-                    <button class="my-3 border-0"><a href="index.php?view_products"
-                            class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">View
-                            Product</a></button>
-                    <button class="my-3 border-0"><a href="index.php?insert_category"
-                            class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Insert
-                            Categories</a></button>
-                    <button class="my-3 border-0"><a href="index.php?view_categories"
-                            class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">View
-                            Categories</a></button>
-                    <button class="my-3 border-0"><a href="index.php?insert_brand"
-                            class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Insert
-                            Brands</a></button>
-                    <button class="my-3 border-0"><a href="index.php?view_brands"
-                            class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">View
-                            Brands</a></button>
-                    <button class="my-3 border-0"><a href="index.php?list_orders"
-                            class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">All
-                            Orders</a></button>
-                    <button class="my-3 border-0"><a href="index.php?list_payments"
-                            class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">All
-                            Payments</a></button>
-                    <button class="my-3 border-0"><a href="index.php?list_users"
-                            class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">List
-                            Users</a></button>
-                    <button class="my-3 border-0"><a href="logout.php"
-                            class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Logout</a></button>
+
+                    <button class="my-3 border-0" <?php echo !isset($_SESSION['admin_name']) ? 'disabled' : ''; ?>
+                        onclick="return onButtonClick(event, 'insert_products.php');">
+                        <span class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Insert Products</span>
+                    </button>
+
+                    <button class="my-3 border-0" <?php echo !isset($_SESSION['admin_name']) ? 'disabled' : ''; ?>
+                        onclick="return onButtonClick(event, 'index.php?view_products');">
+                        <span class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">View Product</span>
+                    </button>
+
+                    <button class="my-3 border-0" <?php echo !isset($_SESSION['admin_name']) ? 'disabled' : ''; ?>
+                        onclick="return onButtonClick(event, 'index.php?insert_category');">
+                        <span class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Insert
+                            Categories</span></button>
+
+                    <button class="my-3 border-0" <?php echo !isset($_SESSION['admin_name']) ? 'disabled' : ''; ?>
+                        onclick="return onButtonClick(event, 'index.php?view_categories');">
+                        <span class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">View Categories</span>
+                    </button>
+
+                    <button class="my-3 border-0" <?php echo !isset($_SESSION['admin_name']) ? 'disabled' : ''; ?>
+                        onclick="return onButtonClick(event, 'index.php?insert_brand');">
+                        <span class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Insert Brands</span>
+                    </button>
+
+                    <button class="my-3 border-0" <?php echo !isset($_SESSION['admin_name']) ? 'disabled' : ''; ?>
+                        onclick="return onButtonClick(event, 'index.php?view_brands');">
+                        <span class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">View Brands</span>
+                    </button>
+
+                    <button class="my-3 border-0" <?php echo !isset($_SESSION['admin_name']) ? 'disabled' : ''; ?>
+                        onclick="return onButtonClick(event, 'index.php?list_orders');">
+                        <span class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">All Orders</span>
+                    </button>
+
+                    <button class="my-3 border-0" <?php echo !isset($_SESSION['admin_name']) ? 'disabled' : ''; ?>
+                        onclick="return onButtonClick(event, 'index.php?list_payments');">
+                        <span class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">All Payments</span>
+                    </button>
+
+                    <button class="my-3 border-0" <?php echo !isset($_SESSION['admin_name']) ? 'disabled' : ''; ?>
+                        onclick="return onButtonClick(event, 'index.php?list_users');">
+                        <span class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">List Users</span>
+                    </button>
+
+                    <?php
+                    if (!isset($_SESSION['admin_name'])) {
+                        echo '<button class="my-3 border-0"><a href="admin_login.php" class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Admin Login</a></button>';
+                    } else {
+                        echo '<button class="my-3 border-0"><a href="logout.php" class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Logout</a></button>';
+                    }
+                    ?>
                 </div>
+                <script>
+                    function onButtonClick(event, target) {
+                        if (event.target.getAttribute('disabled') !== null) {
+                            event.preventDefault(); // Prevent anchor tag's default behavior
+                            return false; // Prevent button click event
+                        }
+                        window.location.href = target; // Redirect to the desired location
+                    }
+                </script>
             </div>
         </div>
 
