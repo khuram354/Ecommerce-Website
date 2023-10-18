@@ -50,12 +50,20 @@ session_start();
         <!-- 1st child -->
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Logo</a>
+                <img src="khuram_logo.svg" alt="our logo" class="pb-3">
                 <nav class="navbar navbar-expand-lg">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Welcome Guest</a>
-                        </li>
+                        <?php
+                        if (!isset($_SESSION['admin_name'])) {
+                            echo "<li class='nav-item'>
+                            <a class='nav-link' href='#'>Welcome Guest</a>
+                            </li>";
+                        } else {
+                            echo "<li class='nav-item'>
+                        <a class='nav-link' href='#'>Welcome " . $_SESSION['admin_name'] . "</a>
+                        </li>";
+                        }
+                        ?>
                     </ul>
                 </nav>
             </div>
@@ -70,7 +78,13 @@ session_start();
             <div class="col-md-12 bg-secondary p-1 d-flex align-items-center">
                 <div class="p-3">
                     <a href="#"><img src="../images/admin1.png" alt="admin1" class="admin_image"></a>
-                    <p class="text-light text-center">Admin Name</p>
+                    <?php
+                    if (!isset($_SESSION['admin_name'])) {
+                        echo "<p class='text-light text-center'>Admin Name</p>";
+                    } else {
+                        echo "<p class='text-light text-center'>" . $_SESSION['admin_name'] . "</p>";
+                    }
+                    ?>
                 </div>
                 <div class="button text-center">
                     <button class="my-3 border-0"><a href="insert_products.php"
@@ -100,7 +114,7 @@ session_start();
                     <button class="my-3 border-0"><a href="index.php?list_users"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">List
                             Users</a></button>
-                    <button class="my-3 border-0"><a href=""
+                    <button class="my-3 border-0"><a href="logout.php"
                             class="nav-link text-dark fw-bold bg-info m-1 px-2 py-1">Logout</a></button>
                 </div>
             </div>

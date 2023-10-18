@@ -1,3 +1,7 @@
+<?php
+include('../includes/connect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -101,8 +105,8 @@
             <div class="col-lg-6">
                 <form action="" method="post">
                     <div class="form-outline">
-                        <label for="username" class="form-label">User Name</label>
-                        <input type="text" name="username" id="username" class="form-control"
+                        <label for="admin_username" class="form-label">Admin Username</label>
+                        <input type="text" name="admin_username" id="admin_username" class="form-control"
                             placeholder="Enter User Name" required>
                     </div>
                     <div class="form-outline">
@@ -132,3 +136,38 @@
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['admin_registration'])) {
+    $admin_username = $_POST['admin_username'];
+    $admin_email = $_POST['email'];
+    $admin_password = $_POST['password'];
+    $confirm_admin_password = $_POST['confirm_password'];
+
+    // Your validation logic here
+    $select_query = "SELECT * FROM admin_table WHERE admin_name='$admin_username'";
+    $result = mysqli_query($con, $select_query);
+    $rows_count = mysqli_num_rows($result);
+
+    if ($rows_count > 0) {
+        echo "<script>alert('Username already exists. Please choose another username!')</script>";
+    } else if ($admin_password != $confirm_admin_password) {
+        echo "<script>alert('Password and Confirm Password do not match.')</script>";
+    } else {
+        // Hash the password before storing it
+        $hashed_password = password_hash($admin_password, PASSWORD_DEFAULT);
+
+        // Insert data into the database
+        $insert_query = "INSERT INTO admin_table (admin_name, admin_email, admin_password) 
+                         VALUES ('$admin_username', '$admin_email', '$hashed_password')";
+
+        if (mysqli_query($con, $insert_query)) {
+            echo "<script>alert('Admin Registration Successful!')</script>";
+            // Redirect to index.php after successful registration
+            echo "<script>window.open('admin_login.php','_self')</script>";
+        } else {
+            echo "<script>alert('Error: " . $insert_query . "<br>" . mysqli_error($con) . "')</script>";
+        }
+    }
+}
+?>

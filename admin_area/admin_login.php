@@ -1,3 +1,9 @@
+<?php
+include('../includes/connect.php');
+include('../functions/common_function.php');
+@session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -120,3 +126,36 @@
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['admin_login'])) {
+    $admin_username = $_POST['admin_username'];
+    $admin_password = $_POST['admin_password'];
+
+    $select_query = "SELECT * FROM `admin_table` WHERE admin_name='$admin_username'";
+    $result = mysqli_query($con, $select_query);
+    $row_count = mysqli_num_rows($result);
+    $row_data = mysqli_fetch_assoc($result);
+    $admin_ip = getIPAddress();
+
+    if ($row_count > 0) {
+        $_SESSION['admin_name'] = $admin_username;
+        if (password_verify($admin_password, $row_data['admin_password'])) {
+            // echo "<script>alert('Login Successful!')</script>";
+            if ($row_count == 1) {
+                $_SESSION['admin_name'] = $admin_username;
+                echo "<script>alert('Login Successful!')</script>";
+                echo "<script>window.open('index.php','_self')</script>";
+            } else {
+                $_SESSION['admin_name'] = $admin_username;
+                echo "<script>alert('Login Successful!')</script>";
+                echo "<script>window.open('index.php','_self')</script>";
+            }
+        } else {
+            echo "<script>alert('invalid credentials')</script>";
+        }
+    } else {
+        echo "<script>alert('invalid credentials')</script>";
+    }
+}
+?>
