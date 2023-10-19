@@ -35,8 +35,7 @@ if (isset($_POST['confirm_payment'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirm Payment</title>
     <!-- Bootstrap CSS Link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
         h1 {
@@ -57,14 +56,12 @@ if (isset($_POST['confirm_payment'])) {
 </head>
 
 <body class="bg-success">
-
     <div class="container my-5">
         <h1 class="text-center text-light">Confirm Payment</h1>
         <form action="" method="post">
             <div class="form-outline text-center my-4 w-50 m-auto">
                 <label for="invoice_number" class="form-label text-light">Invoice Number</label>
-                <input type="text" class="form-control w-50 m-auto" name="invoice_number"
-                    value="<?php echo $invoice_number ?>">
+                <input type="text" class="form-control w-50 m-auto" name="invoice_number" value="<?php echo $invoice_number ?>">
             </div>
             <div class="form-outline text-center my-4 w-50 m-auto">
                 <label for="amount" class="form-label text-light">Amount Due</label>
@@ -86,7 +83,6 @@ if (isset($_POST['confirm_payment'])) {
             </div>
         </form>
     </div>
-
 </body>
 
 </html>

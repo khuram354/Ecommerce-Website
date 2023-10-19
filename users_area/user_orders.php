@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$username = $_SESSION['username'];
+$get_users = "SELECT * FROM `user_table` WHERE username='$username'";
+$result = mysqli_query($con, $get_users);
+$row_fetch = mysqli_fetch_assoc($result);
+$user_id = $row_fetch['user_id'];
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Orders</title>
-</head>
-
-<body>
-    <?php
-    $username = $_SESSION['username'];
-    $get_users = "SELECT * FROM `user_table` WHERE username='$username'";
-    $result = mysqli_query($con, $get_users);
-    $row_fetch = mysqli_fetch_assoc($result);
-    $user_id = $row_fetch['user_id'];
-
-    ?>
-    <h3 class="text-success">All My Orders</h3>
+?>
+<h3 class="text-success">All My Orders</h3>
+<div class="table-responsive">
     <table class="table table-bordered mt-3 text-center align-middle">
         <thead class="table-dark">
             <tr>
@@ -65,6 +56,4 @@
             ?>
         </tbody>
     </table>
-</body>
-
-</html>
+</div>

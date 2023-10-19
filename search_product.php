@@ -13,14 +13,21 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce Website Using PHP and MySQL</title>
     <!-- Bootstrap CSS Link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Font Awesome Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom CSS File Link -->
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* media queries 2nd child */
+        @media (max-width: 991.98px) {
+            .navbar.navbar-expand-lg .navbar-nav.me-auto .nav-item {
+                margin-left: 15px;
+                /* Adjust the margin value according to your preference */
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -29,12 +36,10 @@ session_start();
         <!-- first child -->
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.php">
                     <img src="./images/khuram_logo.svg" alt="our logo" class="pb-3">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -63,8 +68,7 @@ session_start();
                         </li>
                     </ul>
                     <form class="d-flex" action="" method="get">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                            name="search_data">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
                         <input type="submit" value="search" class="btn btn-outline-light" name="search_data_product">
                     </form>
                 </div>
@@ -100,7 +104,7 @@ session_start();
             </ul>
         </nav>
         <!-- 3rd child -->
-        <div class="bg-light">
+        <div class="bg-light my-3">
             <h3 class="text-center">Our Store</h3>
             <p class="text-center">
                 Communication is the heart of community and e-commerce
@@ -131,7 +135,7 @@ session_start();
                     </li>
                     <?php
                     getbrands()
-                        ?>
+                    ?>
                 </ul>
                 <!-- categories to be displayed -->
                 <ul class="navbar-nav me-auto text-center">
@@ -142,7 +146,7 @@ session_start();
                     </li>
                     <?php
                     getcategories()
-                        ?>
+                    ?>
                 </ul>
             </div>
         </div>
@@ -155,9 +159,7 @@ session_start();
     </div>
 
     <!-- Bootstrap JS Link -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>

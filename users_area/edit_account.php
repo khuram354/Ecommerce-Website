@@ -27,10 +27,7 @@ if (isset($_GET['edit_account'])) {
             echo "<script>alert('Data Updated Successfully!')</script>";
             echo "<script>window.open('logout.php','_self')</script>";
         }
-
     }
-
-
 }
 
 
@@ -74,7 +71,7 @@ if (isset($_GET['edit_account'])) {
             <input type="text" class="form-control w-50 m-auto" value="<?php echo $user_mobile ?>" name="user_mobile">
         </div>
 
-        <input type="submit" value="Update" class="btn btn-info" name="user_update">
+        <input type="submit" value="Update" class="btn btn-danger mb-3" name="user_update">
     </form>
 </body>
 

@@ -13,12 +13,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce Website-cart details</title>
     <!-- Bootstrap CSS Link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Font Awesome Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom CSS File Link -->
     <link rel="stylesheet" href="style.css">
 
@@ -27,6 +24,14 @@ session_start();
             width: 100px;
             height: 100px;
             object-fit: contain;
+        }
+
+        /* media queries 2nd child */
+        @media (max-width: 991.98px) {
+            .navbar.navbar-expand-lg .navbar-nav.me-auto .nav-item {
+                margin-left: 15px;
+                /* Adjust the margin value according to your preference */
+            }
         }
     </style>
 
@@ -38,12 +43,10 @@ session_start();
         <!-- first child -->
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.php">
                     <img src="./images/khuram_logo.svg" alt="our logo" class="pb-3">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -99,7 +102,7 @@ session_start();
             </ul>
         </nav>
         <!-- 3rd child -->
-        <div class="bg-light">
+        <div class="bg-light my-3">
             <h3 class="text-center">Our Store</h3>
             <p class="text-center">
                 Communication is the heart of community and e-commerce
@@ -142,14 +145,12 @@ session_start();
                                     $product_image1 = $row_product_price['product_image1'];
                                     $product_values = array_sum($product_price);
                                     $total_price += $product_values;
-                                    ?>
+                        ?>
                                     <tr>
                                         <td class="align-middle">
                                             <?php echo $product_title ?>
                                         </td>
-                                        <td class="align-middle"><img
-                                                src="./admin_area/product_images/<?php echo $product_image1 ?>" alt=""
-                                                class="cart_img"></td>
+                                        <td class="align-middle"><img src="./admin_area/product_images/<?php echo $product_image1 ?>" alt="" class="cart_img"></td>
                                         <td class="align-middle"><input type="text" name="qty" class="form-input w-50 text-center">
                                         </td>
                                         <?php
@@ -172,8 +173,7 @@ session_start();
                                         <td class="align-middle">
                                             <?php echo $price_table ?>/-
                                         </td>
-                                        <td class="align-middle"><input type="checkbox" name="removeitem[]"
-                                                value="<?php echo $product_id ?>"></td>
+                                        <td class="align-middle"><input type="checkbox" name="removeitem[]" value="<?php echo $product_id ?>"></td>
                                         <td class="align-middle">
                                             <!-- <button type="button" class="btn btn-warning">Update</button> -->
                                             <input type="submit" value="Update Cart" class="btn btn-warning" name="update_cart">
@@ -181,7 +181,7 @@ session_start();
                                             <input type="submit" value="Remove Cart" class="btn btn-danger" name="remove_cart">
                                         </td>
                                     </tr>
-                                <?php }
+                        <?php }
                             }
                         } else {
                             echo "<h2 class='text-center text-danger'>Cart is Empty</h2>";
@@ -222,7 +222,6 @@ session_start();
                             if ($run_delete) {
                                 echo "<script>window.open('cart.php', '_self')</script>";
                             }
-
                         }
                     }
                 }
@@ -240,9 +239,7 @@ session_start();
     </div>
 
     <!-- Bootstrap JS Link -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>

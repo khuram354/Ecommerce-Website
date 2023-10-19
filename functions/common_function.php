@@ -257,14 +257,14 @@ function view_details()
                 </div>
                 <div class='col-md-8'>
                         <!-- related images -->
-                        <div class='row'>
-                            <div class='col-md-12'>
-                                <h4 class='text-center text-info mb-5'>Related Products</h4>
+                        <div class='row my-3'>
+                            <div class='col-12 col-md-12'>
+                                <h4 class='text-center text-info mb-3'>Related Products</h4>
                             </div>
-                            <div class='col-md-6'>
+                            <div class='col-6 col-sm-6 col-md-6'>
                                 <img class='card-img-top' src='./admin_area/product_images/$product_image2' alt='$product_title'>
                             </div>
-                            <div class='col-md-6'>
+                            <div class='col-6 col-sm-6 col-md-6'>
                                 <img class='card-img-top' src='./admin_area/product_images/$product_image3' alt='$product_title'>
                             </div>
                         </div>
@@ -354,7 +354,6 @@ function total_cart_price()
             $product_price = array($row_product_price['product_price']);
             $product_values = array_sum($product_price);
             $total_price += $product_values;
-
         }
     }
     echo $total_price;
@@ -387,5 +386,3 @@ function get_user_order_details()
         }
     }
 }
-
-?>
